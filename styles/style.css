@@ -1,0 +1,13 @@
+#bars_container{
+    width: 90vw; 
+    height: 70vh; 
+    display: flex; 
+    flex-direction: row;
+}
+
+.bar{
+    width: 30px;
+    border: 1px solid black;
+    margin: 0 5px;
+    transition: height 0.5s ease-in-out;
+}
