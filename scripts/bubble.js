@@ -5,6 +5,8 @@ let mini=1;
 let maxi=20;
 let numOfBars=10;
 let unsorted_array=new Array(numOfBars);
+let speedFactor=document.getElementById("speed_factor")
+let heightFactor=document.getElementById("height_factor")
 
 function randomN(mini,maxi) {
      return Math.floor(Math.random()*(maxi-mini+1))+mini;
