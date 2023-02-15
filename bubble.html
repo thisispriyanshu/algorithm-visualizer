@@ -60,28 +60,29 @@
     <br>
     <div class="bg-success" style="height: 100vh;">
         <br>
-        <h2 class="text-center text-warning">Bubble Sort</h2>
         <!-- <div class="row"> -->
         <div class="d-flex justify-content-around" id="slider_btn">
             <div class="me-2" id="speed_slider">
-            <label for="speed_factor" class="form-label">Speed Factor</label>
-            <input type="range" class="form-range" min="10" max="1000" id="speed_factor">
+                <label for="speed_factor" class="form-label">Speed Factor</label>
+                <input type="range" class="form-range" min="50" max="1000" step="50" id="speed_factor">
             </div>
+            <h2 class="text-center text-warning">Bubble Sort</h2>
             <div class="me-2" id="height_slider">
-            <label for="height_factor" class="form-label">Height Factor</label>
-            <input type="range" class="form-range" min="10" max="100" id="height_factor">
+                <label for="height_factor" class="form-label">Height Factor</label>
+                <input type="range" class="form-range" min="0" max="50" step="10" id="height_factor">
             </div>
         </div>
         <!-- </div> -->
-        <div class="bg-secondary m-auto" id="bars_container" style="width: 90vw; height: 70vh; display: flex; flex-direction: row;">
-        <div class="bar"></div>
+        <div class="bg-secondary m-auto" id="bars_container"
+            style="width: 90vw; height: 70vh; display: flex; flex-direction: row;">
+            <div class="bar"></div>
         </div>
         <div class="container-fluid text-center mt-3" id="button-control">
             <div class="my-2">
-            <button id="random_btn" class="btn btn-info">Random Array</button>
-            <span>or</span>
-            <input placeholder="Enter Input Elements" />
-            <button class="bg-primary text-white">Submit</button>
+                <button id="random_btn" class="btn btn-info">Random Array</button>
+                <span>or</span>
+                <input placeholder="Enter Input Elements" id="input_array">
+                <button class="bg-primary text-white" id="submit_input_array">Submit</button>
             </div>
             <button class="bg-warning" id="sort_btn">Sort</button>
             <button>
