@@ -21,7 +21,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Sort Visualizer</a>
+                <a class="navbar-brand" href="#">Sort Visualizer</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -30,13 +30,13 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="documentation.html">Documentation</a>
+                            <a class="nav-link" href="#">Documentation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -44,12 +44,11 @@
                                 Sorting Algorithms
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="selection.html">Selection Sort</a></li>
-                                <li><a class="dropdown-item" href="insertion.html">Insertion Sort</a></li>
-                                <li><a class="dropdown-item" href="bubble.html">Bubble Sort</a></li>
-                                <li><a class="dropdown-item" href="quick.html">Quick Sort</a></li>
-                                <li><a class="dropdown-item" href="heap.html">Heap Sort</a></li>
-                                <li><a class="dropdown-item" href="merge.html">Merge Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Selection Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Insertion Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Bubble Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Quick Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Heap Sort</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -61,6 +60,7 @@
     <br>
     <div class="bg-success" style="height: 100vh;">
         <br>
+        <!-- <div class="row"> -->
         <div class="d-flex justify-content-around" id="slider_btn">
             <div class="me-2" id="speed_slider">
                 <label for="speed_factor" class="form-label">Speed Factor</label>
@@ -72,13 +72,32 @@
                 <input type="range" class="form-range" min="0" max="50" step="10" id="height_factor">
             </div>
         </div>
-
-        <div class="bg-secondary m-auto" id="bars_container"
-            style="width: 90vw; height: 70vh; display: flex; flex-direction: row; justify-content: center;">
+        <!-- </div> -->
+        <div class="bg-secondary m-auto" id="bars_container" style="width: 90vw; height: 70vh; display: flex; flex-direction: row; justify-content: center;">
         </div>
         <div class="container-fluid text-center mt-3" id="button-control">
-            <button id="random_btn" class="btn btn-info m-2">Random Array</button>
+            <!-- <div class="my-2"> -->
+                <button id="random_btn" class="btn btn-info m-2">Random Array</button>
+                <!-- <span>or</span> -->
+                <!-- <input type="text" placeholder="Enter Input Elements" id="input_array" size="30"> -->
+                <!-- <button class="bg-primary text-white" id="submit_input_array">Submit</button> -->
+            <!-- </div> -->
             <button class="btn btn-warning m-2" id="sort_btn">Sort</button>
+            <!-- <button id="stop_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z" />
+                </svg>
+            </button>
+            <button id="resume_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-skip-end-btn-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z" />
+                </svg>
+            </button>
+            <button id="reset_button">Reset</button> -->
             <button class="btn btn-danger m-2" onclick="window.location.reload()">Clear</button>
         </div>
     </div>
