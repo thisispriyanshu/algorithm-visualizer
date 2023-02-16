@@ -73,34 +73,32 @@
             </div>
         </div>
         <!-- </div> -->
-        <div class="bg-secondary m-auto" id="bars_container"
-            style="width: 90vw; height: 70vh; display: flex; flex-direction: row;">
-            <div class="bar"></div>
+        <div class="bg-secondary m-auto" id="bars_container" style="width: 90vw; height: 70vh; display: flex; flex-direction: row;">
         </div>
         <div class="container-fluid text-center mt-3" id="button-control">
-            <div class="my-2">
-                <button id="random_btn" class="btn btn-info">Random Array</button>
-                <span>or</span>
-                <input placeholder="Enter Input Elements" id="input_array">
-                <button class="bg-primary text-white" id="submit_input_array">Submit</button>
-            </div>
-            <button class="bg-warning" id="sort_btn">Sort</button>
-            <button>
+            <!-- <div class="my-2"> -->
+                <button id="random_btn" class="btn btn-info m-2">Random Array</button>
+                <!-- <span>or</span> -->
+                <!-- <input type="text" placeholder="Enter Input Elements" id="input_array" size="30"> -->
+                <!-- <button class="bg-primary text-white" id="submit_input_array">Submit</button> -->
+            <!-- </div> -->
+            <button class="btn btn-warning m-2" id="sort_btn">Sort</button>
+            <!-- <button id="stop_button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
                     <path
                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z" />
                 </svg>
             </button>
-            <button>
+            <button id="resume_button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-skip-end-btn-fill" viewBox="0 0 16 16">
                     <path
                         d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z" />
                 </svg>
             </button>
-            <button>Reset</button>
-            <button class="bg-danger">Clear</button>
+            <button id="reset_button">Reset</button> -->
+            <button class="btn btn-danger m-2" onclick="window.location.reload()">Clear</button>
         </div>
     </div>
     <div class="container-fluid text-center bg-black text-white p-2">
