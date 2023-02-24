@@ -1,3 +1,6 @@
+body{
+    margin: 4px;
+}
 #bars_container {
     width: 90vw;
     height: 70vh;
@@ -16,4 +19,8 @@
     position: relative;
     bottom: 0.5em;
     font-size: 0.8em;
+}
+
+.card_list{
+    list-style: none;
 }
