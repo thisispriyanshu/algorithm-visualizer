@@ -68,7 +68,7 @@ async function bubbleSort(array) {
         bars[j + 1].style.width = 30 + "px";
         bars[j + 1].style.backgroundColor = "lightgreen";
         bars[j + 1].innerText = array[j + 1];
-        bars[j].style.margin = 2 + "px";
+        bars[j + 1].style.margin = 2 + "px";
         await sleep(10000 / speedFactor);
       }
     }

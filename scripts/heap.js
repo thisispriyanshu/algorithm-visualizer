@@ -48,13 +48,13 @@ async function swap(array, i, j, bars) {
   let temp = array[i];
   array[i] = array[j];
   array[j] = temp;
-  bars[i].style.height = Math.min(array[i] * heightFactor,450) + "px";
-  bars[i].style.width=30+"px";
-  bars[j].style.height = Math.min(array[j] * heightFactor,450) + "px";
-  bars[j].style.width=30+"px";
+  bars[i].style.height = Math.min(array[i] * heightFactor, 450) + "px";
+  bars[i].style.width = 30 + "px";
+  bars[j].style.height = Math.min(array[j] * heightFactor, 450) + "px";
+  bars[j].style.width = 30 + "px";
   bars[i].style.backgroundColor = "red";
   bars[j].style.backgroundColor = "red";
-  await sleep(100000/speedFactor);
+  await sleep(100000 / speedFactor);
 
   for (let k = 0; k < bars.length; k++) {
     if (k != i && k != j) {
@@ -66,7 +66,7 @@ async function swap(array, i, j, bars) {
   return array;
 }
 
-async function heapify(array,n,i){
+async function heapify(array, n, i) {
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
@@ -98,7 +98,7 @@ async function heapSort(array) {
   }
   for (let k = 0; k < bars.length; k++) {
     bars[k].style.backgroundColor = "aqua";
-    await sleep(100000/speedFactor);
+    await sleep(100000 / speedFactor);
   }
   return array;
 }
