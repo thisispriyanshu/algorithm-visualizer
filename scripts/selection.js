@@ -48,12 +48,12 @@ async function selectionSort(array) {
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
-  var i,j,min_idx;
-  for (i = 0; i < array.length-1; i++) {
-    min_idx=i;
-    for (j = i+1; j < array.length; j++) {
+  var i, j, min_idx;
+  for (i = 0; i < array.length - 1; i++) {
+    min_idx = i;
+    for (j = i + 1; j < array.length; j++) {
       if ((array[j] < array[min_idx])) {
-        min_idx=j;
+        min_idx = j;
         for (let k = 0; k < bars.length; k++) {
           if ((k !== i && k !== min_idx)) {
             bars[k].style.backgroundColor = "aqua";
@@ -61,20 +61,20 @@ async function selectionSort(array) {
         }
       }
     }
-        let temp = array[i];
-        array[i] = array[min_idx];
-        array[min_idx] = temp;
-        bars[i].style.height = Math.min(array[i] * heightFactor, 450) + "px";
-        bars[i].style.width = 30 + "px";
-        bars[i].style.backgroundColor = "lightgreen";
-        bars[i].innerText = array[i];
-        bars[i].style.margin = 2 + "px";
-        bars[min_idx].style.height = Math.min(array[min_idx] * heightFactor, 450) + "px";
-        bars[min_idx].style.width = 30 + "px";
-        bars[min_idx].style.backgroundColor = "lightgreen";
-        bars[min_idx].innerText = array[min_idx];
-        bars[min_idx].style.margin = 2 + "px";
-        await sleep(100000 / speedFactor);
+    let temp = array[i];
+    array[i] = array[min_idx];
+    array[min_idx] = temp;
+    bars[i].style.height = Math.min(array[i] * heightFactor, 450) + "px";
+    bars[i].style.width = 30 + "px";
+    bars[i].style.backgroundColor = "lightgreen";
+    bars[i].innerText = array[i];
+    bars[i].style.margin = 2 + "px";
+    bars[min_idx].style.height = Math.min(array[min_idx] * heightFactor, 450) + "px";
+    bars[min_idx].style.width = 30 + "px";
+    bars[min_idx].style.backgroundColor = "lightgreen";
+    bars[min_idx].innerText = array[min_idx];
+    bars[min_idx].style.margin = 2 + "px";
+    await sleep(100000 / speedFactor);
   }
   return array;
 }

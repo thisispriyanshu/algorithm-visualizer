@@ -44,36 +44,36 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function swap(array,leftIndex,rightIndex,bars){
+async function swap(array, leftIndex, rightIndex, bars) {
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   var temp = array[leftIndex];
   array[leftIndex] = array[rightIndex];
   array[rightIndex] = temp;
-  bars[leftIndex].style.height = Math.min(array[leftIndex] * heightFactor,450) + "px";
-  bars[leftIndex].style.width=30+"px";
+  bars[leftIndex].style.height = Math.min(array[leftIndex] * heightFactor, 450) + "px";
+  bars[leftIndex].style.width = 30 + "px";
   bars[leftIndex].style.backgroundColor = "lightgreen";
   bars[leftIndex].innerText = array[leftIndex];
-  bars[rightIndex].style.height = Math.min(array[rightIndex] * heightFactor,450) + "px";
-  bars[rightIndex].style.width=30+"px";
+  bars[rightIndex].style.height = Math.min(array[rightIndex] * heightFactor, 450) + "px";
+  bars[rightIndex].style.width = 30 + "px";
   bars[rightIndex].style.backgroundColor = "lightgreen";
   bars[rightIndex].innerText = array[rightIndex];
-  await sleep(100000/speedFactor);
+  await sleep(100000 / speedFactor);
 }
 
-async function partition(array,left,right){
+async function partition(array, left, right) {
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
-  let pivotIndex=Math.floor((right+left)/2);
-  var pivot=array[pivotIndex];
-  bars[pivotIndex].style.backgroundColor="red";
+  let pivotIndex = Math.floor((right + left) / 2);
+  var pivot = array[pivotIndex];
+  bars[pivotIndex].style.backgroundColor = "red";
   for (let i = 0; i < bars.length; i++) {
     if (i != pivotIndex) {
       bars[i].style.backgroundColor = "aqua";
     }
   }
-  var i,j;
+  var i, j;
   (i = left), //left pointer
     (j = right); //right pointer
   while (i <= j) {
@@ -92,28 +92,28 @@ async function partition(array,left,right){
   return i;
 }
 
-async function quickSort(array,left,right){
+async function quickSort(array, left, right) {
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
   var index;
-  if(array.length>1){
-    index=await partition(array,left,right);
-    if(left<index-1){
-      await quickSort(array,left,index-1);
+  if (array.length > 1) {
+    index = await partition(array, left, right);
+    if (left < index - 1) {
+      await quickSort(array, left, index - 1);
     }
-    if(index<right){
-      await quickSort(array,index,right);
+    if (index < right) {
+      await quickSort(array, index, right);
     }
   }
   for (let index = 0; index < bars.length; index++) {
-    bars[index].style.backgroundColor="aqua";
+    bars[index].style.backgroundColor = "aqua";
   }
   return array;
 }
 
 sort_btn.addEventListener("click", function () {
-  let sorted_array = quickSort(unsorted_array,0,unsorted_array.length-1);
+  let sorted_array = quickSort(unsorted_array, 0, unsorted_array.length - 1);
   console.log(sorted_array);
 }
 );

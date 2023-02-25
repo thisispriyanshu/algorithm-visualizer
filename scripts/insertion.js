@@ -51,11 +51,11 @@ async function insertionSort(array) {
     let j = i - 1;
     while (j >= 0 && array[j] > key) {
       array[j + 1] = array[j];
-      bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor,450) + "px";
-      bars[j + 1].style.width=30+"px";
+      bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor, 450) + "px";
+      bars[j + 1].style.width = 30 + "px";
       bars[j + 1].style.backgroundColor = "red";
       bars[j + 1].innerText = array[j + 1];
-      await sleep(100000/speedFactor);
+      await sleep(100000 / speedFactor);
 
       for (let k = 0; k < bars.length; k++) {
         if (k != j + 1) {
@@ -65,11 +65,11 @@ async function insertionSort(array) {
       j = j - 1;
     }
     array[j + 1] = key;
-    bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor,450) + "px";
-    bars[j + 1].style.width=30+"px";
+    bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor, 450) + "px";
+    bars[j + 1].style.width = 30 + "px";
     bars[j + 1].style.backgroundColor = "lightgreen";
     bars[j + 1].innerText = array[j + 1];
-    await sleep(100000/speedFactor);
+    await sleep(100000 / speedFactor);
   }
 
   for (let k = 0; k < bars.length; k++) {
