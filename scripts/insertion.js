@@ -44,40 +44,41 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function bubbleSort(array) {
-  heightFactor = document.getElementById("height_factor").value;
-  speedFactor = document.getElementById("speed_factor").value;
+async function insertionSort(array) {
   let bars = document.getElementsByClassName("bar");
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - i - 1; j++) {
-      if ((array[j] > array[j + 1])) {
-        for (let k = 0; k < bars.length; k++) {
-          if ((k !== j && k !== j + 1)) {
-            bars[k].style.backgroundColor = "aqua";
-          }
+  for (let i = 1; i < array.length; i++) {
+    let key = array[i];
+    let j = i - 1;
+    while (j >= 0 && array[j] > key) {
+      array[j + 1] = array[j];
+      bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor,450) + "px";
+      bars[j + 1].style.width=30+"px";
+      bars[j + 1].style.backgroundColor = "red";
+      bars[j + 1].innerText = array[j + 1];
+      await sleep(100000/speedFactor);
+
+      for (let k = 0; k < bars.length; k++) {
+        if (k != j + 1) {
+          bars[k].style.backgroundColor = "aqua";
         }
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        bars[j].style.height = Math.min(array[j] * heightFactor, 450) + "px";
-        bars[j].style.width = 30 + "px";
-        bars[j].style.backgroundColor = "lightgreen";
-        bars[j].innerText = array[j];
-        bars[j].style.margin = 2 + "px";
-        bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor, 450) + "px";
-        bars[j + 1].style.width = 30 + "px";
-        bars[j + 1].style.backgroundColor = "lightgreen";
-        bars[j + 1].innerText = array[j + 1];
-        bars[j].style.margin = 2 + "px";
-        await sleep(10000 / speedFactor);
       }
+      j = j - 1;
     }
-    await sleep(10000 / speedFactor);
+    array[j + 1] = key;
+    bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor,450) + "px";
+    bars[j + 1].style.width=30+"px";
+    bars[j + 1].style.backgroundColor = "lightgreen";
+    bars[j + 1].innerText = array[j + 1];
+    await sleep(100000/speedFactor);
+  }
+
+  for (let k = 0; k < bars.length; k++) {
+    bars[k].style.backgroundColor = "aqua";
   }
   return array;
 }
 sort_btn.addEventListener("click", function () {
-  let sorted_array = bubbleSort(unsorted_array);
+  let sorted_array = insertionSort(unsorted_array);
   console.log(sorted_array);
 }
 );

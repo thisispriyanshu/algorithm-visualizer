@@ -44,40 +44,76 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function bubbleSort(array) {
+async function swap(array,leftIndex,rightIndex,bars){
+  heightFactor = document.getElementById("height_factor").value;
+  speedFactor = document.getElementById("speed_factor").value;
+  var temp = array[leftIndex];
+  array[leftIndex] = array[rightIndex];
+  array[rightIndex] = temp;
+  bars[leftIndex].style.height = Math.min(array[leftIndex] * heightFactor,450) + "px";
+  bars[leftIndex].style.width=30+"px";
+  bars[leftIndex].style.backgroundColor = "lightgreen";
+  bars[leftIndex].innerText = array[leftIndex];
+  bars[rightIndex].style.height = Math.min(array[rightIndex] * heightFactor,450) + "px";
+  bars[rightIndex].style.width=30+"px";
+  bars[rightIndex].style.backgroundColor = "lightgreen";
+  bars[rightIndex].innerText = array[rightIndex];
+  await sleep(100000/speedFactor);
+}
+
+async function partition(array,left,right){
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - i - 1; j++) {
-      if ((array[j] > array[j + 1])) {
-        for (let k = 0; k < bars.length; k++) {
-          if ((k !== j && k !== j + 1)) {
-            bars[k].style.backgroundColor = "aqua";
-          }
-        }
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        bars[j].style.height = Math.min(array[j] * heightFactor, 450) + "px";
-        bars[j].style.width = 30 + "px";
-        bars[j].style.backgroundColor = "lightgreen";
-        bars[j].innerText = array[j];
-        bars[j].style.margin = 2 + "px";
-        bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor, 450) + "px";
-        bars[j + 1].style.width = 30 + "px";
-        bars[j + 1].style.backgroundColor = "lightgreen";
-        bars[j + 1].innerText = array[j + 1];
-        bars[j].style.margin = 2 + "px";
-        await sleep(10000 / speedFactor);
-      }
+  let pivotIndex=Math.floor((right+left)/2);
+  var pivot=array[pivotIndex];
+  bars[pivotIndex].style.backgroundColor="red";
+  for (let i = 0; i < bars.length; i++) {
+    if (i != pivotIndex) {
+      bars[i].style.backgroundColor = "aqua";
     }
-    await sleep(10000 / speedFactor);
+  }
+  var i,j;
+  (i = left), //left pointer
+    (j = right); //right pointer
+  while (i <= j) {
+    while (array[i] < pivot) {
+      i++;
+    }
+    while (array[j] > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      await swap(array, i, j, bars); //swapping two elements
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+
+async function quickSort(array,left,right){
+  heightFactor = document.getElementById("height_factor").value;
+  speedFactor = document.getElementById("speed_factor").value;
+  let bars = document.getElementsByClassName("bar");
+  var index;
+  if(array.length>1){
+    index=await partition(array,left,right);
+    if(left<index-1){
+      await quickSort(array,left,index-1);
+    }
+    if(index<right){
+      await quickSort(array,index,right);
+    }
+  }
+  for (let index = 0; index < bars.length; index++) {
+    bars[index].style.backgroundColor="aqua";
   }
   return array;
 }
+
 sort_btn.addEventListener("click", function () {
-  let sorted_array = bubbleSort(unsorted_array);
+  let sorted_array = quickSort(unsorted_array,0,unsorted_array.length-1);
   console.log(sorted_array);
 }
 );

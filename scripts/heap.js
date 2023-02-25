@@ -44,40 +44,66 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function bubbleSort(array) {
+async function swap(array, i, j, bars) {
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+  bars[i].style.height = Math.min(array[i] * heightFactor,450) + "px";
+  bars[i].style.width=30+"px";
+  bars[j].style.height = Math.min(array[j] * heightFactor,450) + "px";
+  bars[j].style.width=30+"px";
+  bars[i].style.backgroundColor = "red";
+  bars[j].style.backgroundColor = "red";
+  await sleep(100000/speedFactor);
+
+  for (let k = 0; k < bars.length; k++) {
+    if (k != i && k != j) {
+      bars[k].style.backgroundColor = "aqua";
+    }
+  }
+  bars[i].innerText = array[i];
+  bars[j].innerText = array[j];
+  return array;
+}
+
+async function heapify(array,n,i){
   heightFactor = document.getElementById("height_factor").value;
   speedFactor = document.getElementById("speed_factor").value;
   let bars = document.getElementsByClassName("bar");
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - i - 1; j++) {
-      if ((array[j] > array[j + 1])) {
-        for (let k = 0; k < bars.length; k++) {
-          if ((k !== j && k !== j + 1)) {
-            bars[k].style.backgroundColor = "aqua";
-          }
-        }
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        bars[j].style.height = Math.min(array[j] * heightFactor, 450) + "px";
-        bars[j].style.width = 30 + "px";
-        bars[j].style.backgroundColor = "lightgreen";
-        bars[j].innerText = array[j];
-        bars[j].style.margin = 2 + "px";
-        bars[j + 1].style.height = Math.min(array[j + 1] * heightFactor, 450) + "px";
-        bars[j + 1].style.width = 30 + "px";
-        bars[j + 1].style.backgroundColor = "lightgreen";
-        bars[j + 1].innerText = array[j + 1];
-        bars[j].style.margin = 2 + "px";
-        await sleep(10000 / speedFactor);
-      }
-    }
-    await sleep(10000 / speedFactor);
+  let largest = i;
+  let left = 2 * i + 1;
+  let right = 2 * i + 2;
+  if (left < n && array[left] > array[largest]) {
+    largest = left;
+  }
+  if (right < n && array[right] > array[largest]) {
+    largest = right;
+  }
+  if (largest != i) {
+    await swap(array, i, largest, bars);
+    await heapify(array, n, largest);
+  }
+}
+
+async function heapSort(array) {
+  heightFactor = document.getElementById("height_factor").value;
+  speedFactor = document.getElementById("speed_factor").value;
+  let bars = document.getElementsByClassName("bar");
+  for (let i = Math.floor(array.length / 2); i >= 0; i--) {
+    await heapify(array, array.length, i);
+  }
+  for (let i = array.length - 1; i >= 0; i--) {
+    await swap(array, 0, i, bars);
+    await heapify(array, i, 0);
+  }
+  for (let k = 0; k < bars.length; k++) {
+    bars[k].style.backgroundColor = "aqua";
+    await sleep(100000/speedFactor);
   }
   return array;
 }
 sort_btn.addEventListener("click", function () {
-  let sorted_array = bubbleSort(unsorted_array);
+  let sorted_array = heapSort(unsorted_array);
   console.log(sorted_array);
 }
 );
