@@ -1,6 +1,27 @@
-# Sorting Algorithm Visualizer
+# Sort Visualizer - Visualization for Sorting algorithms
 
-Link -: https://thisispriyanshu.github.io/algorithm-visualizer/
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/thisispriyanshu/algorithm-visualizer?logo=github&style=for-the-badge)](https://github.com/thisispriyanshu/) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/thisispriyanshu/algorithm-visualizer?style=for-the-badge&logo=git)](https://github.com/thisispriyanshu/) 
+[![GitHub stars](https://img.shields.io/github/stars/thisispriyanshu/algorithm-visualizer?style=for-the-badge)](https://github.com/thisispriyanshu/algorithm-visualizer/stargazers) 
+[![My stars](https://img.shields.io/github/stars/thisispriyanshu?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&label=My%20stars)](https://github.com/thisispriyanshu/algorithm-visualizer/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/thisispriyanshu/algorithm-visualizer?style=for-the-badge&logo=git)](https://github.com/thisispriyanshu/algorithm-visualizer/network)
+[![Code size](https://img.shields.io/github/languages/code-size/thisispriyanshu/algorithm-visualizer?style=for-the-badge)](https://github.com/thisispriyanshu/algorithm-visualizer/)
+[![Languages](https://img.shields.io/github/languages/count/thisispriyanshu/algorithm-visualizer?style=for-the-badge)](https://github.com/thisispriyanshu/algorithm-visualizer/)
+[![Top](https://img.shields.io/github/languages/top/thisispriyanshu/algorithm-visualizer?style=for-the-badge&label=Top%20Languages)](https://github.com/thisispriyanshu/algorithm-visualizer/)
+[![Issues](https://img.shields.io/github/issues/thisispriyanshu/algorithm-visualizer?style=for-the-badge&label=Issues)](https://github.com/thisispriyanshu/algorithm-visualizer/)
+[![Watchers](	https://img.shields.io/github/watchers/thisispriyanshu/algorithm-visualizer?label=Watch&style=for-the-badge)](https://github.com/thisispriyanshu/algorithm-visualizer/) 
+
+Sort Real-time random array values and adjust speed and height for different algorithms
+along with documentation explaining sorting algorithms
+
+<p align="center">
+<a href="https://thisispriyanshu.github.io/algorithm-visualizer/">
+</a>
+</p>
+
+[![Generic badge](https://img.shields.io/badge/view-demo-blue?style=for-the-badge&label=View%20Demo%20Video)](youtube.com) 
+
+## Features and Interfaces
 ---
 
 In this article, you will learn what sorting algorithm is and different sorting algorithms.
