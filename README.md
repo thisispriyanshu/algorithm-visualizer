@@ -19,9 +19,57 @@ along with documentation explaining sorting algorithms
 </a>
 </p>
 
-[![Generic badge](https://img.shields.io/badge/view-demo-blue?style=for-the-badge&label=View%20Demo%20Video)](youtube.com) 
 
 ## Features and Interfaces
+
+1. HomePage
+   - Responsive website with the dropdown in navbar and animation in title, and below are cards of different sorting algorithms.
+   
+   ![image](https://i.ibb.co/ZYrvKw4/image9.png)
+   
+   - The cards contain a button to redirect you to a page where you can visualize the sorting algorithm, and also each card contain a brief description and time and space complexity.
+   
+   ![image](https://i.ibb.co/n8VXSPB/image5.png)
+  
+  - At last, it contains a form where you can contact me just by typing your message here, and it will redirect you to mail me with an already written message.
+   
+   ![image](https://i.ibb.co/sQCwpst/image7.png)
+   
+2. Sorting Page
+   - It opens with such a page containing 3 buttons for creating a random array, then a sort button to sort, and then to clear. Along with it contains the speed factor and height factor slider.
+   
+   ![image](https://i.ibb.co/Cmt96K0/image11.png)
+   
+   - Then we will create a random array (blue button) where the random array of size ten is created.
+   
+   ![image](https://i.ibb.co/4tHXfwJ/image3.png)
+   
+   - We can also adjust the height factor to make bars small or big.
+   
+   ![image](https://i.ibb.co/tJjNBPw/image10.png)
+   
+   - After this, we will click on the sort button, and we can observe the sorting visualization.
+   
+   ![image](https://i.ibb.co/SPCQd7z/image1.png)
+   
+   - And finally, our array is sorted.
+   
+   ![iamge](https://i.ibb.co/4KXPmFq/image2.png)
+   
+   - And we can clear this by clicking on the clear button (red button). Like bubble sort, we have the selection, insertion, quick, and heap sort.
+    
+    ![image](https://i.ibb.co/CVF09qL/image4.png)
+    
+3. Documentation Page
+ 
+   - We have a theory about sorting algorithms.
+   
+   ![image](https://i.ibb.co/C97rZcz/image6.png)
+   
+   - Along with its time complexity, space complexity, and description about it.
+   
+   ![image](https://i.ibb.co/gvDMQR4/image8.png)
+   
 ---
 
 In this article, you will learn what sorting algorithm is and different sorting algorithms.
